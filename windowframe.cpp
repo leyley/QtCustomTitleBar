@@ -13,7 +13,7 @@ QFrame(parent),
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
-    this->borderSize=3;
+    this->setBorderSize(3);
     if(child!=nullptr) {
         this->ui->body->layout()->addWidget(child);
         QString title=child->windowTitle();
@@ -80,6 +80,11 @@ void WindowFrame::mouseReleaseEvent(QMouseEvent *event) {
 
 void WindowFrame::setBorderSize(int sizeOfBorder) {
     this->borderSize=sizeOfBorder;
+    this->ui->body->layout()->setMargin(this->borderSize);
+    QString styleSheet=this->styleSheet();
+    QString newBorderString=QString("border: %1px solid #2f96fe;").arg(this->borderSize);
+    QString newStyleSheet=styleSheet.replace("border: 3px solid #2f96fe;",newBorderString);
+    this->setStyleSheet(newStyleSheet);
 }
 
 bool WindowFrame::nativeEvent(const QByteArray &eventType, void *message, long *result) {
