@@ -35,6 +35,10 @@ class WindowFrame : public QFrame
     public:
     void setTitle(QString &displayName);
     void setIcon(QIcon &icon);
+    void addHeaderButton(QWidget *widget);
+    void enableMinimum(bool enable);
+    void enableMaximum(bool enable);
+    void enableClose(bool enable);
 };
 
 #endif // WINDOWFRAME_H

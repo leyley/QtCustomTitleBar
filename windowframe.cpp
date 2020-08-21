@@ -22,7 +22,6 @@ QFrame(parent),
         this->setIcon(icon);
         this->resize(child->size());
     }
-    //this->ui->minimum->setDisabled(true);
 }
 
 WindowFrame::~WindowFrame()
@@ -134,4 +133,35 @@ void WindowFrame::setIcon(QIcon &icon) {
     }
     this->ui->icon->setPixmap(icon.pixmap(this->ui->icon->pixmap()->size()));
     this->setWindowIcon(icon);
+}
+
+void WindowFrame::addHeaderButton(QWidget *widget) {
+    if(widget==nullptr) {
+        return;
+    }
+    this->ui->customButtons->layout()->addWidget(widget);
+}
+
+void WindowFrame::enableMinimum(bool enable) {
+    if(!enable) {
+        this->ui->minimum->hide();
+    } else {
+        this->ui->minimum->show();
+    }
+}
+
+void WindowFrame::enableMaximum(bool enable) {
+    if(!enable) {
+        this->ui->maximum->hide();
+    } else {
+        this->ui->maximum->show();
+    }
+}
+
+void WindowFrame::enableClose(bool enable) {
+    if(!enable) {
+        this->ui->close->hide();
+    } else {
+        this->ui->close->show();
+    }
 }

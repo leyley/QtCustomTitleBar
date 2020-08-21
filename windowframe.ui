@@ -14,7 +14,10 @@
    <string/>
   </property>
   <property name="styleSheet">
-   <string notr="true">#header {
+   <string notr="true">* {
+font-family: Arial;
+}
+#header {
 background:#96cafe;
 border: 3px solid #2f96fe;
 border-bottom: none;
@@ -25,8 +28,6 @@ border-top-right-radius: 5px;
 background: white;
 border: 3px solid #2f96fe;
 border-top: none;
-border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -120,6 +121,9 @@ border-bottom-right-radius: 5px;
          </item>
          <item>
           <widget class="QLabel" name="displayName">
+           <property name="styleSheet">
+            <string notr="true">font-weight: bold;</string>
+           </property>
            <property name="text">
             <string>Window</string>
            </property>
@@ -171,6 +175,27 @@ border-bottom-right-radius: 5px;
             </size>
            </property>
           </spacer>
+         </item>
+         <item>
+          <widget class="QWidget" name="customButtons" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="minimum">
@@ -317,16 +342,16 @@ background-image:url(:/images/close-pressed.png);
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="topMargin">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="bottomMargin">
-       <number>0</number>
+       <number>3</number>
       </property>
      </layout>
     </widget>
