@@ -78,5 +78,6 @@
         <file>images/top-left-inactive.xpm</file>
         <file>images/top-right-active.xpm</file>
         <file>images/top-right-inactive.xpm</file>
+        <file>images/application.png</file>
     </qresource>
 </RCC>

@@ -62,16 +62,16 @@ border-top: none;
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="topMargin">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="bottomMargin">
-       <number>3</number>
+       <number>0</number>
       </property>
       <item>
        <widget class="QWidget" name="title" native="true">
@@ -101,13 +101,13 @@ border-top: none;
           <widget class="QLabel" name="icon">
            <property name="minimumSize">
             <size>
-             <width>50</width>
+             <width>40</width>
              <height>40</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>50</width>
+             <width>40</width>
              <height>40</height>
             </size>
            </property>
@@ -115,7 +115,16 @@ border-top: none;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resources.qrc">:/images/menu-active.xpm</pixmap>
+            <pixmap resource="resources.qrc">:/images/application.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="margin">
+            <number>5</number>
            </property>
           </widget>
          </item>
