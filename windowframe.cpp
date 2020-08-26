@@ -13,6 +13,7 @@ QFrame(parent),
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
+    this->ui->verticalLayout->setSizeConstraint(QLayout::SetFixedSize);
     this->setBorderSize(3);
     if(child!=nullptr) {
         this->ui->body->layout()->addWidget(child);
@@ -20,7 +21,6 @@ QFrame(parent),
         this->setTitle(title);
         QIcon icon=child->windowIcon();
         this->setIcon(icon);
-        this->resize(child->size());
     }
 }
 
