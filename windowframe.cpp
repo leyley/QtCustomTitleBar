@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <windowsx.h>
 #endif
+#include <QDebug>
 
 WindowFrame::WindowFrame(QWidget *parent, QWidget *child) :
 QFrame(parent),
@@ -21,6 +22,8 @@ QFrame(parent),
         this->setTitle(title);
         QIcon icon=child->windowIcon();
         this->setIcon(icon);
+        this->mainBody=child;
+        this->mainBody->installEventFilter(this);
     }
 }
 
@@ -169,4 +172,21 @@ void WindowFrame::enableClose(bool enable) {
     } else {
         this->ui->close->show();
     }
+}
+
+bool WindowFrame::eventFilter(QObject *obj, QEvent *event) {
+    if(obj==this->mainBody) {
+        //qDebug()<<"Event received:"<<event->type();
+        if(event->type()==QEvent::HideToParent) {
+            this->hide();
+            return true;
+        }
+        if(event->type()==QEvent::ShowToParent) {
+            this->show();
+            return true;
+        }
+    } else {
+        return QFrame::eventFilter(obj,event);
+    }
+    return false;
 }

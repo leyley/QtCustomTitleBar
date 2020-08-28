@@ -24,6 +24,7 @@ class WindowFrame : public QFrame
 
     private:
     Ui::WindowFrame *ui;
+    QWidget *mainBody;
     QPoint position;
     int borderSize;
     protected:
@@ -39,6 +40,9 @@ class WindowFrame : public QFrame
     void enableMinimum(bool enable);
     void enableMaximum(bool enable);
     void enableClose(bool enable);
+
+    protected:
+    bool eventFilter(QObject *obj, QEvent *event);
 };
 
 #endif // WINDOWFRAME_H
