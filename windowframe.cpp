@@ -81,6 +81,20 @@ void WindowFrame::mouseReleaseEvent(QMouseEvent *event) {
     this->position.setY(0);
 }
 
+void WindowFrame::mouseDoubleClickEvent(QMouseEvent *event) {
+    if (event->buttons() == Qt::LeftButton) {
+        QWidget* widget = this->childAt(event->x(), event->y());
+        if(widget==this->ui->title || widget==this->ui->buttons) {
+            if(this->isMaximized()) {
+                this->showNormal();
+            } else {
+                this->showMaximized();
+            }
+        }
+    }
+}
+
+
 void WindowFrame::setBorderSize(int sizeOfBorder) {
     this->borderSize=sizeOfBorder;
     this->ui->body->layout()->setMargin(this->borderSize);
