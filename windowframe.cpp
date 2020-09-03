@@ -14,7 +14,7 @@ QFrame(parent),
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
-    this->ui->verticalLayout->setSizeConstraint(QLayout::SetFixedSize);
+    //this->ui->verticalLayout->setSizeConstraint(QLayout::SetFixedSize);
     this->setBorderSize(3);
     if(child!=nullptr) {
         this->ui->body->layout()->addWidget(child);
@@ -199,8 +199,10 @@ bool WindowFrame::eventFilter(QObject *obj, QEvent *event) {
             this->show();
             return true;
         }
+        return QObject::eventFilter(obj,event);
     } else {
         return QFrame::eventFilter(obj,event);
     }
     return false;
 }
+
