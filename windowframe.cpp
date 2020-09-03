@@ -24,6 +24,7 @@ QFrame(parent),
         this->setIcon(icon);
         this->mainBody=child;
         this->mainBody->installEventFilter(this);
+        this->resize(child->size());
     }
 }
 
