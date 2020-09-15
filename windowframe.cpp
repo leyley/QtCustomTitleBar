@@ -12,7 +12,7 @@ QFrame(parent),
        ui(new Ui::WindowFrame)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
     //this->ui->verticalLayout->setSizeConstraint(QLayout::SetFixedSize);
     this->setBorderSize(3);
